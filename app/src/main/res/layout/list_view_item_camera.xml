@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/frame_layout_list_item_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/image_view_list_item_camera_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/cicle_corners_bg"
+            android:minHeight="202.5dp"
+            android:scaleType="centerInside" />
+
+        <ImageView
+            android:id="@+id/image_view_list_item_camera_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="center"
+            android:src="@android:drawable/ic_media_play" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/text_view_list_item_camera_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/frame_layout_list_item_camera"
+        android:layout_below="@id/frame_layout_list_item_camera"
+        android:text="相机名称"
+        android:textSize="@dimen/edit_text_size" />
+
+</RelativeLayout>

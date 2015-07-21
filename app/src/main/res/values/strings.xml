@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Family</string>
+    <string name="hello_world">Hello world!</string>
+
+    <!-- SignInActivity -->
+    <string name="title_activity_sign_in">SignInActivity</string>
+    <string name="login_account_text_hint">Account</string>
+    <string name="login_password_text_hint">Password</string>
+    <string name="login_text_login">Sign In</string>
+    <string name="login_text_register">Sign Up</string>
+    <string name="login_text_forget_password">Forgot Password</string>
+    <!-- SignUpActivity -->
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="sign_up_account_text_hint">Account</string>
+    <string name="sign_up_sms_text_hint">SMS code</string>
+    <string name="sign_up_password_text_hint">Password</string>
+    <string name="sign_up_button_text_get_sms">Get Code</string>
+    <string name="sign_up_button_text_next">Next</string>
+    <!-- RetrievePasswordActivity -->
+    <string name="title_activity_retrieve_password">RetrievePasswordActivity</string>
+    <!-- MainActivity -->
+    <string name="title_activity_main">MainActivity</string>
+    <string name="tab_button_text_camera">Camera</string>
+    <string name="tab_button_text_event">Event</string>
+    <string name="tab_button_text_more">More</string>
+    <string name="title_bar_text_camera">CameraList</string>
+    <string name="title_bar_text_event">EventList</string>
+    <string name="title_bar_text_more">MoreSettings</string>
+
+    <!-- CameraFragment -->
+    <string name="listfooterview_normal">More</string>
+    <string name="listfooterview_ready">Release To Load</string>
+    <string name="list_item_camera_default_name">Unnamed</string>
+
+    <!-- Return Code-->
+    <string name="define_code_0">Success Done</string>
+    <string name="define_code_1">Error:Unknown</string>
+    <string name="define_code_2">Error:Server is Busy</string>
+    <string name="define_code_3">Error:Invalid Params</string>
+    <string name="define_code_100">Error:Invalid Account</string>
+    <string name="define_code_101">Error:Invalid Password</string>
+    <string name="define_code_102">Error:Invalid Cellphone</string>
+    <string name="define_code_103">Error:Invalid Email</string>
+    <string name="define_code_104">Error:Invalid Auth_Code</string>
+    <string name="define_code_105"></string>
+    <string name="define_code_200"></string>
+    <string name="define_code_201"></string>
+    <string name="define_code_202"></string>
+    <string name="define_code_203"></string>
+    <string name="define_code_204"></string>
+    <string name="define_code_300"></string>
+    <string name="define_code_301"></string>
+    <string name="define_code_302"></string>
+    <string name="define_code_303"></string>
+    <string name="define_code_304"></string>
+    <string name="define_code_305"></string>
+    <string name="define_code_306"></string>
+    <string name="define_code_307"></string>
+    <string name="define_code_308"></string>
+    <string name="define_code_309"></string>
+    <string name="define_code_310"></string>
+
+
+</resources>

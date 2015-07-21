@@ -1,0 +1,62 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.rejulink">
+
+    <!-- 权限 -->
+    <!-- 完全网络访问权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--友盟统计SDK权限 begin-->
+    <!--检测联网方式，区分用户设备使用的是2G、3G或是WiFi-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--获取用户设备的IMEI，通过IMEI和mac来唯一的标识用户-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--获取用户设备的mac地址，在平板设备上，无法通过imei标示设备，我们会将mac地址作为用户的唯一标识-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--友盟统计SDK权限 end-->
+
+    <application android:allowBackup="true" android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher" android:theme="@style/AppTheme"
+        android:name=".app.ZApplication">
+
+        <!--友盟SDK key 和 渠道号-->
+        <meta-data android:name="UMENG_APPKEY" android:value="55acf593e0f55a7832005be1" />
+        <meta-data android:name="UMENG_CHANNEL" android:value="Test" />
+
+        <!-- 启动闪屏界面 -->
+        <activity
+            android:name=".activities.SplashActivity"
+            android:theme="@style/SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 登陆界面 -->
+        <activity
+            android:name=".activities.SignInActivity"
+            android:label="@string/title_activity_sign_in"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait"/>
+        <!-- 注册界面 -->
+        <activity
+            android:name=".activities.SignUpActivity"
+            android:label="@string/title_activity_sign_up"
+            android:screenOrientation="portrait" />
+        <!-- 忘记密码界面 -->
+        <activity
+            android:name=".activities.RetrievePasswordActivity"
+            android:label="@string/title_activity_sign_up"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.MainActivity"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait">
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </activity>
+    </application>
+
+</manifest>
