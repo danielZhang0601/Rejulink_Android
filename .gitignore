@@ -5,3 +5,5 @@
 .DS_Store
 /build
 /captures
+/.idea
+Rejulink_Android.iml

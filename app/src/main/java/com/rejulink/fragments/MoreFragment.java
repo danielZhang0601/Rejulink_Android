@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.loopj.android.http.TextHttpResponseHandler;
 import com.rejulink.R;
@@ -21,7 +22,11 @@ import org.apache.http.Header;
  */
 public class MoreFragment extends BaseUIFragment implements View.OnClickListener {
 
-
+    private TextView text_view_fragment_personal_info;
+    private TextView text_view_fragment_modify_password;
+    private TextView text_view_fragment_wifi_config;
+    private TextView text_view_fragment_document;
+    private TextView text_view_fragment_check_update;
     private Button button_more_fragment_sign_out;
 
     private String account;
@@ -31,6 +36,16 @@ public class MoreFragment extends BaseUIFragment implements View.OnClickListener
         View view = inflater.inflate(R.layout.fragment_more, container, false);
         button_more_fragment_sign_out = (Button) view.findViewById(R.id.button_more_fragment_sign_out);
         button_more_fragment_sign_out.setOnClickListener(this);
+        text_view_fragment_personal_info = (TextView)view.findViewById(R.id.text_view_fragment_personal_info);
+        text_view_fragment_personal_info.setOnClickListener(this);
+        text_view_fragment_modify_password = (TextView)view.findViewById(R.id.text_view_fragment_modify_password);
+        text_view_fragment_modify_password.setOnClickListener(this);
+        text_view_fragment_wifi_config = (TextView)view.findViewById(R.id.text_view_fragment_wifi_config);
+        text_view_fragment_wifi_config.setOnClickListener(this);
+        text_view_fragment_document = (TextView)view.findViewById(R.id.text_view_fragment_document);
+        text_view_fragment_document.setOnClickListener(this);
+        text_view_fragment_check_update = (TextView)view.findViewById(R.id.text_view_fragment_check_update);
+        text_view_fragment_check_update.setOnClickListener(this);
         account = (String) SharedPreferenceHelper.get(getActivity(), GlobalDefine.SavedAccount, "");
         return view;
     }

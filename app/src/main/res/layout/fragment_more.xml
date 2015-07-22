@@ -1,106 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/activity_bg_color">
+    android:background="@color/activity_bg_color"
+    android:orientation="vertical">
 
-    <com.rejulink.widgets.ZScrollView
+    <TextView
+        android:id="@+id/text_view_fragment_personal_info"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/view"
-        android:scrollbars="none">
+        android:layout_height="45dp"
+        android:layout_marginTop="40dp"
+        android:drawableLeft="@mipmap/more_password"
+        android:drawablePadding="16dp"
+        android:drawableRight="@mipmap/more_right"
+        android:gravity="center_vertical"
+        android:text="个人信息"
+        android:textSize="24sp"
+        android:background="@drawable/line_item_text_view_bg"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/list_view_divider_line" />
 
-            <View
-                android:layout_marginTop="40dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/divide_color"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:text="修改密码"
-                android:drawableLeft="@mipmap/more_password"
-                android:gravity="center_vertical"
-                android:textSize="24sp"
-                android:drawablePadding="16dp"
-                android:drawableRight="@mipmap/more_right"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/divide_color"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:text="个人信息"
-                android:drawableLeft="@mipmap/more_password"
-                android:gravity="center_vertical"
-                android:textSize="24sp"
-                android:drawablePadding="16dp"
-                android:drawableRight="@mipmap/more_right"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/divide_color"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:text="WiFi配置"
-                android:drawableLeft="@mipmap/more_password"
-                android:gravity="center_vertical"
-                android:textSize="24sp"
-                android:drawablePadding="16dp"
-                android:drawableRight="@mipmap/more_right"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/divide_color"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:text="帮助说明"
-                android:drawableLeft="@mipmap/more_password"
-                android:gravity="center_vertical"
-                android:textSize="24sp"
-                android:drawablePadding="16dp"
-                android:drawableRight="@mipmap/more_right"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/divide_color"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:text="检查更新"
-                android:drawableLeft="@mipmap/more_password"
-                android:gravity="center_vertical"
-                android:textSize="24sp"
-                android:drawablePadding="16dp"
-                android:drawableRight="@mipmap/more_right"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/divide_color"/>
-            <Button
-                android:layout_marginTop="40dp"
-                android:id="@+id/button_more_fragment_sign_out"
-                android:layout_marginLeft="@dimen/activity_horizontal_padding"
-                android:layout_marginRight="@dimen/activity_horizontal_padding"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/button_height"
-                android:background="@drawable/button_sign_in_bg"
-                android:text="Sign Out"
-                android:textSize="@dimen/button_text_size"
-                android:layout_marginBottom="200dp"/>
-
-        </LinearLayout>
-
-    </com.rejulink.widgets.ZScrollView>
+    <TextView
+        android:id="@+id/text_view_fragment_modify_password"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:drawableLeft="@mipmap/more_password"
+        android:drawablePadding="16dp"
+        android:drawableRight="@mipmap/more_right"
+        android:gravity="center_vertical"
+        android:text="修改密码"
+        android:background="@drawable/line_item_text_view_bg"
+        android:textSize="24sp" />
 
 
+    <TextView
+        android:id="@+id/text_view_fragment_wifi_config"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@mipmap/more_password"
+        android:drawablePadding="16dp"
+        android:drawableRight="@mipmap/more_right"
+        android:gravity="center_vertical"
+        android:text="WiFi配置"
+        android:background="@drawable/line_item_text_view_bg"
+        android:textSize="24sp" />
 
-</RelativeLayout>
+
+    <TextView
+        android:id="@+id/text_view_fragment_document"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@mipmap/more_password"
+        android:drawablePadding="16dp"
+        android:drawableRight="@mipmap/more_right"
+        android:gravity="center_vertical"
+        android:text="帮助说明"
+        android:background="@drawable/line_item_text_view_bg"
+        android:textSize="24sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/list_view_divider_line" />
+
+    <TextView
+        android:id="@+id/text_view_fragment_check_update"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:drawableLeft="@mipmap/more_password"
+        android:drawablePadding="16dp"
+        android:drawableRight="@mipmap/more_right"
+        android:gravity="center_vertical"
+        android:text="检查更新"
+        android:background="@drawable/line_item_text_view_bg"
+        android:textSize="24sp" />
+
+
+    <Button
+        android:id="@+id/button_more_fragment_sign_out"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginBottom="200dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_padding"
+        android:layout_marginRight="@dimen/activity_horizontal_padding"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_sign_in_bg"
+        android:text="Sign Out"
+        android:textSize="@dimen/button_text_size" />
+</LinearLayout>
