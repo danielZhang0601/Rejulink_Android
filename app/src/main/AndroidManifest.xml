@@ -49,6 +49,7 @@
             android:name=".activities.RetrievePasswordActivity"
             android:label="@string/title_activity_sign_up"
             android:screenOrientation="portrait"/>
+        <!--主界面-->
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/title_activity_main"
@@ -57,6 +58,11 @@
 
             <category android:name="android.intent.category.LAUNCHER" />
         </activity>
+        <!--播放界面-->
+        <activity android:name=".activities.PlayerActivity"
+            android:label="@string/title_activity_player"
+            android:screenOrientation="sensor"
+            android:configChanges="orientation"/>
     </application>
 
 </manifest>

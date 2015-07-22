@@ -61,6 +61,7 @@
     <string name="define_code_308"></string>
     <string name="define_code_309"></string>
     <string name="define_code_310"></string>
+    <string name="title_activity_player">PlayerActivity</string>
 
 
 </resources>

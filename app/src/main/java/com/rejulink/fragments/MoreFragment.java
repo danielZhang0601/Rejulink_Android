@@ -1,5 +1,6 @@
 package com.rejulink.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import com.loopj.android.http.TextHttpResponseHandler;
 import com.rejulink.R;
 import com.rejulink.activities.BaseActivity;
 import com.rejulink.activities.MainActivity;
+import com.rejulink.activities.PlayerActivity;
 import com.rejulink.protocols.CMServerAccountProtocol;
 import com.rejulink.utils.GlobalDefine;
 import com.rejulink.utils.SharedPreferenceHelper;
@@ -55,6 +57,10 @@ public class MoreFragment extends BaseUIFragment implements View.OnClickListener
         switch (view.getId()) {
             case R.id.button_more_fragment_sign_out:
                 logout();
+                break;
+            case R.id.text_view_fragment_check_update:
+                Intent intent = new Intent(getActivity(),PlayerActivity.class);
+                startActivity(intent);
                 break;
         }
     }
