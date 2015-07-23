@@ -1,4 +1,5 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.rejulink">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rejulink">
 
     <!-- 权限 -->
     <!-- 完全网络访问权限 -->
@@ -13,19 +14,26 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!--友盟统计SDK权限 end-->
 
-    <application android:allowBackup="true" android:label="@string/app_name"
-        android:icon="@mipmap/ic_launcher" android:theme="@style/AppTheme"
-        android:name=".app.ZApplication">
+    <application
+        android:name=".app.ZApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
 
         <!--友盟SDK key 和 渠道号-->
-        <meta-data android:name="UMENG_APPKEY" android:value="55acf593e0f55a7832005be1" />
-        <meta-data android:name="UMENG_CHANNEL" android:value="Test" />
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="55acf593e0f55a7832005be1" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Test" />
 
         <!-- 启动闪屏界面 -->
         <activity
             android:name=".activities.SplashActivity"
-            android:theme="@style/SplashActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,9 +44,9 @@
         <activity
             android:name=".activities.SignInActivity"
             android:label="@string/title_activity_sign_in"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustResize"
-            android:screenOrientation="portrait"/>
+            android:windowSoftInputMode="adjustResize" />
         <!-- 注册界面 -->
         <activity
             android:name=".activities.SignUpActivity"
@@ -48,7 +56,7 @@
         <activity
             android:name=".activities.RetrievePasswordActivity"
             android:label="@string/title_activity_sign_up"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <!--主界面-->
         <activity
             android:name=".activities.MainActivity"
@@ -59,11 +67,11 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </activity>
         <!--播放界面-->
-        <activity android:name=".activities.PlayerActivity"
-            android:label="@string/title_activity_player"
-            android:screenOrientation="sensor"
+        <activity
+            android:name=".activities.PlayerActivity"
             android:configChanges="orientation|screenSize"
-            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+            android:label="@string/title_activity_player"
+            android:screenOrientation="sensor" />
     </application>
 
 </manifest>
