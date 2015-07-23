@@ -1,5 +1,7 @@
 package com.rejulink.activities;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -14,35 +16,40 @@ import com.rejulink.widgets.ZSurfaceView;
  */
 public class PlayerActivity extends BaseActivity {
 
-    private ZSurfaceView zsurface_view_video;
+    private ZSurfaceView zsurface_view_player_video;
     private DisplayMetrics displayMetrics;
+
+    public static void lunchActivity(Context context) {
+        context.startActivity(new Intent(context, PlayerActivity.class));
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
         L.e("onCreate");
-        zsurface_view_video = (ZSurfaceView) findViewById(R.id.zsurface_view_video);
+        zsurface_view_player_video = (ZSurfaceView) findViewById(R.id.zsurface_view_player_video);
         displayMetrics = getResources().getDisplayMetrics();
-        zsurface_view_video.resizeSurfaceView(false, displayMetrics.widthPixels, displayMetrics.heightPixels);
+        zsurface_view_player_video.resizeSurfaceView(false, displayMetrics.widthPixels, displayMetrics.heightPixels);
     }
 
     @Override
     protected void onPause() {
+        zsurface_view_player_video.onPause();
         super.onPause();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        L.e("onResume");
+        zsurface_view_player_video.onResume();
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         L.e("onConfigurationChanged" + newConfig.toString());
-        zsurface_view_video.resizeSurfaceView(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE, displayMetrics.widthPixels, displayMetrics.heightPixels);
+        zsurface_view_player_video.resizeSurfaceView(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE, displayMetrics.widthPixels, displayMetrics.heightPixels);
         setDisplayType(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE);
     }
 
@@ -60,5 +67,4 @@ public class PlayerActivity extends BaseActivity {
         }
         getWindow().getDecorView().setSystemUiVisibility(uiOpts);
     }
-
 }
