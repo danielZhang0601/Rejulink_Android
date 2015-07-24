@@ -59,7 +59,7 @@ public class SignUpActivity extends BaseActivity implements OnClickListener, Com
         button_sign_up_sms_code.setOnClickListener(this);
         button_sign_up_done.setOnClickListener(this);
         check_box_sign_up_new_password.setOnCheckedChangeListener(this);
-        nextActivity = MAIN_ACTIVITY;
+        nextActivity = ActivityEnum.MAIN_ACTIVITY;
     }
 
     @Override
@@ -147,7 +147,7 @@ public class SignUpActivity extends BaseActivity implements OnClickListener, Com
                 ResponseCMSNormal res = JSON.parseObject(s, ResponseCMSNormal.class);
                 if (res.getCode() == CodeDefine.SUCCESS_DONE) {
                     saveAccountInfo();
-                    nextActivity = MAIN_ACTIVITY;
+                    nextActivity = ActivityEnum.MAIN_ACTIVITY;
                     next();
                     finish();
                 }

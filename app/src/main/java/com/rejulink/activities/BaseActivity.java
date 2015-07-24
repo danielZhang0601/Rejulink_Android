@@ -46,14 +46,7 @@ public class BaseActivity extends FragmentActivity {
     /**
      * 全部Activity
      */
-    public int nextActivity = SPLASH_ACTIVITY;
-    public static final int SPLASH_ACTIVITY = 0;
-    public static final int SIGN_IN_ACTIVITY = 1;
-    public static final int SIGN_UP_ACTIVITY = 2;
-    public static final int RETRIEVE_PASSWORD_ACTIVITY = 3;
-    public static final int MAIN_ACTIVITY = 4;
-    public static final int PLAYER_ACTIVITY = 5;
-    public static final int PERSON_INFO_ACTIVITY = 6;
+    public ActivityEnum nextActivity = ActivityEnum.SPLASH_ACTIVITY;
 
     public void next() {
         ZAsyncHttpClient.cancel(this, true);

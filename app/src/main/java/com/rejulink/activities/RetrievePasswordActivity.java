@@ -136,7 +136,7 @@ public class RetrievePasswordActivity extends BaseActivity implements OnClickLis
                 ResponseCMSNormal res = JSON.parseObject(s, ResponseCMSNormal.class);
                 if (res.getCode() == CodeDefine.SUCCESS_DONE) {
                     clearOldPassword();
-                    nextActivity = SIGN_IN_ACTIVITY;
+                    nextActivity = ActivityEnum.SIGN_IN_ACTIVITY;
                     next();
                     finish();
                 }

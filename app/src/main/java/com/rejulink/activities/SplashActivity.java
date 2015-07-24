@@ -49,7 +49,7 @@ public class SplashActivity extends BaseActivity {
             }
         });
         imageView_splash_root.startAnimation(alpha);
-        nextActivity = SIGN_IN_ACTIVITY;
+        nextActivity = ActivityEnum.SIGN_IN_ACTIVITY;
     }
 
     private void connectToServer() {
@@ -81,7 +81,7 @@ public class SplashActivity extends BaseActivity {
                 public void onSuccess(int i, Header[] headers, String s) {
                     ResponseCMSNormal res = JSON.parseObject(s, ResponseCMSNormal.class);
                     if (res.getCode() == CodeDefine.SUCCESS_DONE)
-                        nextActivity = MAIN_ACTIVITY;
+                        nextActivity = ActivityEnum.MAIN_ACTIVITY;
                 }
             });
     }

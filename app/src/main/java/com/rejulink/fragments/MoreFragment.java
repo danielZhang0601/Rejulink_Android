@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.loopj.android.http.TextHttpResponseHandler;
 import com.rejulink.R;
-import com.rejulink.activities.BaseActivity;
+import com.rejulink.activities.ActivityEnum;
 import com.rejulink.activities.MainActivity;
 import com.rejulink.activities.PlayerActivity;
 import com.rejulink.protocols.CMServerAccountProtocol;
@@ -86,7 +86,7 @@ public class MoreFragment extends BaseUIFragment implements View.OnClickListener
     private void backToSignIn() {
         MainActivity activity = (MainActivity) getActivity();
         SharedPreferenceHelper.remove(activity, GlobalDefine.SavedPassword);
-        activity.nextActivity = BaseActivity.SIGN_IN_ACTIVITY;
+        activity.nextActivity = ActivityEnum.SIGN_IN_ACTIVITY;
         activity.next();
         activity.finish();
     }
