@@ -29,12 +29,4 @@ proguard/
 
 # IDEA
 *.iml
-.idea/.name
-.idea/encodings.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/vcs.xml
-.idea/workspace.xml
-.idea/libraries
-.idea/gradle.xml
-.idea/runConfigurations.xml
+.idea/
