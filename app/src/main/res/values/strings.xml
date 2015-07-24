@@ -34,6 +34,11 @@
     <string name="listfooterview_ready">Release To Load</string>
     <string name="list_item_camera_default_name">Unnamed</string>
 
+    <!--PlayerActivity-->
+    <string name="title_activity_player">PlayerActivity</string>
+    <!--PersonInfoActivity-->
+    <string name="title_activity_person_info">PersonInfoActivity</string>
+
     <!-- Return Code-->
     <string name="define_code_0">Success Done</string>
     <string name="define_code_1">Error:Unknown</string>
@@ -61,7 +66,6 @@
     <string name="define_code_308"></string>
     <string name="define_code_309"></string>
     <string name="define_code_310"></string>
-    <string name="title_activity_player">PlayerActivity</string>
 
 
 </resources>

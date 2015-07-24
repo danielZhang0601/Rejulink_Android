@@ -17,7 +17,7 @@ import com.rejulink.fragments.MoreFragment;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
-    public static void lunchActivity(Context context) {
+    public static void launchActivity(Context context) {
         context.startActivity(new Intent(context, MainActivity.class));
     }
 
@@ -96,8 +96,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 textViewEvent.setTextColor(normalColor);
                 imageViewMore.setImageResource(R.mipmap.tab_more_normal);
                 textViewMore.setTextColor(normalColor);
-                if (null != fragmentTransaction)
-                    fragmentTransaction.show(cameraFragment).hide(eventFragment).hide(moreFragment).commit();
+                fragmentTransaction.show(cameraFragment).hide(eventFragment).hide(moreFragment).commit();
                 break;
             case R.id.tab_linear_layout_2:
                 text_view_title_bar_text_back.setText(R.string.title_bar_text_event);
@@ -107,8 +106,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 textViewEvent.setTextColor(selectedColor);
                 imageViewMore.setImageResource(R.mipmap.tab_more_normal);
                 textViewMore.setTextColor(normalColor);
-                if (null != fragmentTransaction)
-                    fragmentTransaction.hide(cameraFragment).show(eventFragment).hide(moreFragment).commit();
+                fragmentTransaction.hide(cameraFragment).show(eventFragment).hide(moreFragment).commit();
                 break;
             case R.id.tab_linear_layout_3:
                 text_view_title_bar_text_back.setText(R.string.title_bar_text_more);
@@ -118,8 +116,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 textViewEvent.setTextColor(normalColor);
                 imageViewMore.setImageResource(R.mipmap.tab_more_select);
                 textViewMore.setTextColor(selectedColor);
-                if (null != fragmentTransaction)
-                    fragmentTransaction.hide(cameraFragment).hide(eventFragment).show(moreFragment).commit();
+                fragmentTransaction.hide(cameraFragment).hide(eventFragment).show(moreFragment).commit();
                 break;
         }
     }

@@ -39,7 +39,7 @@ public class RetrievePasswordActivity extends BaseActivity implements OnClickLis
     private Button button_retrieve_password_done;
     private CheckBox check_box_layout_retrieve_password_new_password;
 
-    public static void lunchActivity(Context context) {
+    public static void launchActivity(Context context) {
         context.startActivity(new Intent(context, RetrievePasswordActivity.class));
     }
 
@@ -88,7 +88,7 @@ public class RetrievePasswordActivity extends BaseActivity implements OnClickLis
 
     private void requestResetPasswordByPhone() {
         String account = edit_text_retrieve_password_account.getText().toString();
-        if (account == null || account.isEmpty()) {
+        if (account.isEmpty()) {
             return;
         } else if (!account.matches(RegDefine.PHONE_NUMBER_REG)) {
             return;
@@ -111,15 +111,15 @@ public class RetrievePasswordActivity extends BaseActivity implements OnClickLis
         String account = edit_text_retrieve_password_account.getText().toString();
         String sms_code = edit_text_retrieve_password_sms_code.getText().toString();
         String password = edit_text_retrieve_password_new_password.getText().toString();
-        if (account == null || account.isEmpty()) {
+        if (account.isEmpty()) {
             return;
         } else if (!account.matches(RegDefine.PHONE_NUMBER_REG)) {
             return;
-        } else if (sms_code == null || sms_code.isEmpty()) {
+        } else if (sms_code.isEmpty()) {
             return;
         } else if (!sms_code.matches(RegDefine.SMS_CODE_REG)) {
             return;
-        } else if (password == null || password.isEmpty()) {
+        } else if (password.isEmpty()) {
             return;
         } else if (!password.matches(RegDefine.PASSWORD_REG)) {
             return;

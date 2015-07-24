@@ -13,10 +13,7 @@
     <color name="edit_hint_text_color">#bdc1c4</color>
     <color name="view_tab_top_line">#b9b9b9</color>
     <color name="view_tab_top_line_select">#0000FF</color>
+    <color name="text_color_common">#5d5f5e</color>
     <!-- 登录界面 -->
-
-
-    <color name="login_button_color">#5d5f5e</color>
-
 
 </resources>

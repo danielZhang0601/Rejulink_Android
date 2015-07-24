@@ -72,6 +72,11 @@
             android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_player"
             android:screenOrientation="sensor" />
+        <!--个人信息界面-->
+        <activity
+            android:name=".activities.PersonInfoActivity"
+            android:label="@string/title_activity_person_info"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

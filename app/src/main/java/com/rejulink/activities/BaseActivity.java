@@ -52,21 +52,29 @@ public class BaseActivity extends FragmentActivity {
     public static final int SIGN_UP_ACTIVITY = 2;
     public static final int RETRIEVE_PASSWORD_ACTIVITY = 3;
     public static final int MAIN_ACTIVITY = 4;
+    public static final int PLAYER_ACTIVITY = 5;
+    public static final int PERSON_INFO_ACTIVITY = 6;
 
     public void next() {
         ZAsyncHttpClient.cancel(this, true);
         switch (nextActivity) {
             case SIGN_IN_ACTIVITY:
-                SignInActivity.lunchActivity(this);
+                SignInActivity.launchActivity(this);
                 break;
             case SIGN_UP_ACTIVITY:
-                SignUpActivity.lunchActivity(this);
+                SignUpActivity.launchActivity(this);
                 break;
             case RETRIEVE_PASSWORD_ACTIVITY:
-                RetrievePasswordActivity.lunchActivity(this);
+                RetrievePasswordActivity.launchActivity(this);
                 break;
             case MAIN_ACTIVITY:
-                MainActivity.lunchActivity(this);
+                MainActivity.launchActivity(this);
+                break;
+            case PLAYER_ACTIVITY:
+                PlayerActivity.launchActivity(this);
+                break;
+            case PERSON_INFO_ACTIVITY:
+                PersonInfoActivity.launchActivity(this);
                 break;
         }
     }

@@ -39,7 +39,7 @@ public class SignUpActivity extends BaseActivity implements OnClickListener, Com
     private TextView text_view_title_bar_text_back;
     private CheckBox check_box_sign_up_new_password;
 
-    public static void lunchActivity(Context context) {
+    public static void launchActivity(Context context) {
         context.startActivity(new Intent(context, SignUpActivity.class));
     }
 
@@ -89,7 +89,7 @@ public class SignUpActivity extends BaseActivity implements OnClickListener, Com
 
     private void requestRegisterSMS() {
         String account = edit_text_sign_up_account.getText().toString();
-        if (account == null || account.isEmpty()) {
+        if (account.isEmpty()) {
             ShowMessage.showMessage(this, "手机号不能为空");
         } else if (!account.matches(RegDefine.PHONE_NUMBER_REG)) {
             ShowMessage.showMessage(this, "手机号格式不正确");
@@ -110,15 +110,15 @@ public class SignUpActivity extends BaseActivity implements OnClickListener, Com
         String account = edit_text_sign_up_account.getText().toString();
         String sms_code = edit_text_sign_up_sms_code.getText().toString();
         String password = edit_text_sign_up_new_password.getText().toString();
-        if (account == null || account.isEmpty()) {
+        if (account.isEmpty()) {
             ShowMessage.showMessage(this, "手机号不能为空");
         } else if (!account.matches(RegDefine.PHONE_NUMBER_REG)) {
             ShowMessage.showMessage(this, "手机号格式不正确");
-        } else if (sms_code == null || sms_code.isEmpty()) {
+        } else if (sms_code.isEmpty()) {
             ShowMessage.showMessage(this, "短信验证码不能为空");
         } else if (!sms_code.matches(RegDefine.SMS_CODE_REG)) {
             ShowMessage.showMessage(this, "短信验证码格式不正确");
-        } else if (password == null || password.isEmpty()) {
+        } else if (password.isEmpty()) {
             ShowMessage.showMessage(this, "密码不能为空");
         } else if (!password.matches(RegDefine.PASSWORD_REG)) {
             ShowMessage.showMessage(this, "密码格式不正确");

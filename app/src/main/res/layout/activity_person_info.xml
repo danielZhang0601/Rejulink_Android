@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/include_person_info_title_bar"
+        layout="@layout/activity_title_bar" />
+
+    <LinearLayout
+        android:id="@+id/list_view_person_info_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/include_person_info_title_bar"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edit_text_person_info_nick_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_text_height"
+
+            android:layout_marginTop="40dp"
+            android:background="@null"
+            android:drawableLeft="@mipmap/more_password"
+            android:drawablePadding="@dimen/text_view_content_padding"
+            android:gravity="center_vertical"
+            android:hint="昵称" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/list_view_divider_line" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_text_height"
+            android:background="@null"
+            android:drawableLeft="@mipmap/more_password"
+            android:drawablePadding="@dimen/text_view_content_padding"
+            android:gravity="center_vertical"
+            android:hint="手机号" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/list_view_divider_line" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_text_height"
+            android:background="@null"
+            android:drawableLeft="@mipmap/more_password"
+            android:drawablePadding="@dimen/text_view_content_padding"
+            android:gravity="center_vertical"
+            android:hint="邮箱" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/list_view_divider_line" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_horizontal_padding"
+                android:text="男" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_padding"
+                android:text="女" />
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/list_view_divider_line" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_text_height"
+            android:drawableLeft="@mipmap/more_password"
+            android:text="生日"
+            android:drawablePadding="@dimen/text_view_content_padding"
+            android:textSize="@dimen/text_view_text_size"
+            android:gravity="center_vertical"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/list_view_divider_line" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_text_height"
+            android:background="@null"
+            android:drawableLeft="@mipmap/more_password"
+            android:drawablePadding="@dimen/text_view_content_padding"
+            android:gravity="center_vertical"
+            android:hint="地址" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/list_view_divider_line" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/button_person_info_submit"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@id/list_view_person_info_list"
+        android:layout_marginLeft="@dimen/activity_horizontal_padding"
+        android:layout_marginRight="@dimen/activity_horizontal_padding"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_common_bg"
+        android:text="确定"
+        android:textSize="@dimen/button_text_size" />
+
+
+</RelativeLayout>

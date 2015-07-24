@@ -10,13 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="40dp"
+        android:background="@drawable/line_item_text_view_bg"
         android:drawableLeft="@mipmap/more_password"
         android:drawablePadding="16dp"
         android:drawableRight="@mipmap/more_right"
         android:gravity="center_vertical"
         android:text="个人信息"
-        android:textSize="24sp"
-        android:background="@drawable/line_item_text_view_bg"/>
+        android:textSize="@dimen/text_view_text_size" />
 
     <View
         android:layout_width="match_parent"
@@ -27,13 +27,13 @@
         android:id="@+id/text_view_fragment_modify_password"
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:background="@drawable/line_item_text_view_bg"
         android:drawableLeft="@mipmap/more_password"
         android:drawablePadding="16dp"
         android:drawableRight="@mipmap/more_right"
         android:gravity="center_vertical"
         android:text="修改密码"
-        android:background="@drawable/line_item_text_view_bg"
-        android:textSize="24sp" />
+        android:textSize="@dimen/text_view_text_size" />
 
 
     <TextView
@@ -41,13 +41,13 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/line_item_text_view_bg"
         android:drawableLeft="@mipmap/more_password"
         android:drawablePadding="16dp"
         android:drawableRight="@mipmap/more_right"
         android:gravity="center_vertical"
         android:text="WiFi配置"
-        android:background="@drawable/line_item_text_view_bg"
-        android:textSize="24sp" />
+        android:textSize="@dimen/text_view_text_size" />
 
 
     <TextView
@@ -55,13 +55,13 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/line_item_text_view_bg"
         android:drawableLeft="@mipmap/more_password"
         android:drawablePadding="16dp"
         android:drawableRight="@mipmap/more_right"
         android:gravity="center_vertical"
         android:text="帮助说明"
-        android:background="@drawable/line_item_text_view_bg"
-        android:textSize="24sp" />
+        android:textSize="@dimen/text_view_text_size" />
 
     <View
         android:layout_width="match_parent"
@@ -72,13 +72,13 @@
         android:id="@+id/text_view_fragment_check_update"
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:background="@drawable/line_item_text_view_bg"
         android:drawableLeft="@mipmap/more_password"
         android:drawablePadding="16dp"
         android:drawableRight="@mipmap/more_right"
         android:gravity="center_vertical"
         android:text="检查更新"
-        android:background="@drawable/line_item_text_view_bg"
-        android:textSize="24sp" />
+        android:textSize="@dimen/text_view_text_size" />
 
 
     <Button
@@ -89,7 +89,7 @@
         android:layout_marginLeft="@dimen/activity_horizontal_padding"
         android:layout_marginRight="@dimen/activity_horizontal_padding"
         android:layout_marginTop="40dp"
-        android:background="@drawable/button_sign_in_bg"
+        android:background="@drawable/button_common_bg"
         android:text="Sign Out"
         android:textSize="@dimen/button_text_size" />
 </LinearLayout>

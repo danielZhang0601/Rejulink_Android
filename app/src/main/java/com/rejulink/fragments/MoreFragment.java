@@ -58,6 +58,9 @@ public class MoreFragment extends BaseUIFragment implements View.OnClickListener
             case R.id.button_more_fragment_sign_out:
                 logout();
                 break;
+            case R.id.text_view_fragment_personal_info:
+                
+                break;
             case R.id.text_view_fragment_check_update:
                 Intent intent = new Intent(getActivity(),PlayerActivity.class);
                 startActivity(intent);
