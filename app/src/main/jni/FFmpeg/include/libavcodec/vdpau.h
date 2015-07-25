@@ -59,9 +59,9 @@
 
 #if FF_API_BUFS_VDPAU
 union AVVDPAUPictureInfo {
-    VdpPictureInfoH264        h264;
-    VdpPictureInfoMPEG1Or2    mpeg;
-    VdpPictureInfoVC1          vc1;
+    VdpPictureInfoH264 h264;
+    VdpPictureInfoMPEG1Or2 mpeg;
+    VdpPictureInfoVC1 vc1;
     VdpPictureInfoMPEG4Part2 mpeg4;
 };
 #endif
@@ -127,14 +127,14 @@ typedef struct AVVDPAUContext {
     attribute_deprecated
     int bitstream_buffers_used;
 
-   /**
-     * Table of bitstream buffers.
-     * The user is responsible for freeing this buffer using av_freep().
-     *
-     * Set by libavcodec.
-     */
+    /**
+      * Table of bitstream buffers.
+      * The user is responsible for freeing this buffer using av_freep().
+      *
+      * Set by libavcodec.
+      */
     attribute_deprecated
-    VdpBitstreamBuffer *bitstream_buffers;
+            VdpBitstreamBuffer *bitstream_buffers;
 #endif
     AVVDPAU_Render2 render2;
 } AVVDPAUContext;
@@ -147,6 +147,7 @@ typedef struct AVVDPAUContext {
 AVVDPAUContext *av_alloc_vdpaucontext(void);
 
 AVVDPAU_Render2 av_vdpau_hwaccel_get_render2(const AVVDPAUContext *);
+
 void av_vdpau_hwaccel_set_render2(AVVDPAUContext *, AVVDPAU_Render2);
 
 /**

@@ -38,15 +38,15 @@ public class MoreFragment extends BaseUIFragment implements View.OnClickListener
         View view = inflater.inflate(R.layout.fragment_more, container, false);
         button_more_fragment_sign_out = (Button) view.findViewById(R.id.button_more_fragment_sign_out);
         button_more_fragment_sign_out.setOnClickListener(this);
-        text_view_fragment_personal_info = (TextView)view.findViewById(R.id.text_view_fragment_personal_info);
+        text_view_fragment_personal_info = (TextView) view.findViewById(R.id.text_view_fragment_personal_info);
         text_view_fragment_personal_info.setOnClickListener(this);
-        text_view_fragment_modify_password = (TextView)view.findViewById(R.id.text_view_fragment_modify_password);
+        text_view_fragment_modify_password = (TextView) view.findViewById(R.id.text_view_fragment_modify_password);
         text_view_fragment_modify_password.setOnClickListener(this);
-        text_view_fragment_wifi_config = (TextView)view.findViewById(R.id.text_view_fragment_wifi_config);
+        text_view_fragment_wifi_config = (TextView) view.findViewById(R.id.text_view_fragment_wifi_config);
         text_view_fragment_wifi_config.setOnClickListener(this);
-        text_view_fragment_document = (TextView)view.findViewById(R.id.text_view_fragment_document);
+        text_view_fragment_document = (TextView) view.findViewById(R.id.text_view_fragment_document);
         text_view_fragment_document.setOnClickListener(this);
-        text_view_fragment_check_update = (TextView)view.findViewById(R.id.text_view_fragment_check_update);
+        text_view_fragment_check_update = (TextView) view.findViewById(R.id.text_view_fragment_check_update);
         text_view_fragment_check_update.setOnClickListener(this);
         account = (String) SharedPreferenceHelper.get(getActivity(), GlobalDefine.SavedAccount, "");
         return view;
@@ -59,10 +59,10 @@ public class MoreFragment extends BaseUIFragment implements View.OnClickListener
                 logout();
                 break;
             case R.id.text_view_fragment_personal_info:
-                
+
                 break;
             case R.id.text_view_fragment_check_update:
-                Intent intent = new Intent(getActivity(),PlayerActivity.class);
+                Intent intent = new Intent(getActivity(), PlayerActivity.class);
                 startActivity(intent);
                 break;
         }

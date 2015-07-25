@@ -9,6 +9,11 @@ import com.umeng.analytics.MobclickAgent;
 
 public class BaseActivity extends FragmentActivity {
 
+    /**
+     * 全部Activity
+     */
+    public ActivityEnum nextActivity = ActivityEnum.SPLASH_ACTIVITY;
+
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -43,32 +48,33 @@ public class BaseActivity extends FragmentActivity {
         super.onStop();
     }
 
-    /**
-     * 全部Activity
-     */
-    public ActivityEnum nextActivity = ActivityEnum.SPLASH_ACTIVITY;
-
     public void next() {
+        next(null);
+    }
+
+    public void next(Bundle bundle) {
         ZAsyncHttpClient.cancel(this, true);
         switch (nextActivity) {
             case SIGN_IN_ACTIVITY:
-                SignInActivity.launchActivity(this);
+                SignInActivity.launchActivity(this, bundle);
                 break;
             case SIGN_UP_ACTIVITY:
-                SignUpActivity.launchActivity(this);
+                SignUpActivity.launchActivity(this, bundle);
                 break;
             case RETRIEVE_PASSWORD_ACTIVITY:
-                RetrievePasswordActivity.launchActivity(this);
+                RetrievePasswordActivity.launchActivity(this, bundle);
                 break;
             case MAIN_ACTIVITY:
-                MainActivity.launchActivity(this);
+                MainActivity.launchActivity(this, bundle);
                 break;
             case PLAYER_ACTIVITY:
-                PlayerActivity.launchActivity(this);
+                PlayerActivity.launchActivity(this, bundle);
                 break;
             case PERSON_INFO_ACTIVITY:
-                PersonInfoActivity.launchActivity(this);
+                PersonInfoActivity.launchActivity(this, bundle);
                 break;
+            case ZXING_CAPTURE_ACTIVITY:
+                ZXingCaptureActivity.launchActivity(this, bundle);
         }
     }
 }

@@ -4,6 +4,12 @@ public class RequestCMSLogoutData {
     private String account;
     private String auth_code;
 
+    public RequestCMSLogoutData(String account, String auth_code) {
+        super();
+        this.account = account;
+        this.auth_code = auth_code;
+    }
+
     public String getAccount() {
         return account;
     }
@@ -17,12 +23,6 @@ public class RequestCMSLogoutData {
     }
 
     public void setAuth_code(String auth_code) {
-        this.auth_code = auth_code;
-    }
-
-    public RequestCMSLogoutData(String account, String auth_code) {
-        super();
-        this.account = account;
         this.auth_code = auth_code;
     }
 

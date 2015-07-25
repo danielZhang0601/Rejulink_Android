@@ -19,23 +19,14 @@ import com.rejulink.R;
  * Created by zxd on 2015/7/16.
  */
 public class WaterDropListViewHeader extends FrameLayout {
+    private static final int DISTANCE_BETWEEN_STRETCH_READY = 250;
     private LinearLayout mContainer;
     private ProgressBar mProgressBar;
     private WaterDropView mWaterDropView;
     private STATE mState = STATE.normal;
     private IStateChangedListener mStateChangedListener;
-
     private int stretchHeight;
     private int readyHeight;
-    private static final int DISTANCE_BETWEEN_STRETCH_READY = 250;
-
-    public enum STATE {
-        normal,//正常
-        stretch,//准备进行拉伸
-        ready,//拉伸到最大位置
-        refreshing,//刷新
-        end//刷新结束，回滚
-    }
 
     public WaterDropListViewHeader(Context context) {
         super(context);
@@ -49,6 +40,28 @@ public class WaterDropListViewHeader extends FrameLayout {
     public WaterDropListViewHeader(Context context, AttributeSet attrs) {
         super(context, attrs);
         initView(context);
+    }
+
+    /**
+     * Map a value within a given range to another range.
+     *
+     * @param value    the value to map
+     * @param fromLow  the low end of the range the value is within
+     * @param fromHigh the high end of the range the value is within
+     * @param toLow    the low end of the range to map to
+     * @param toHigh   the high end of the range to map to
+     * @return the mapped value
+     */
+    public static double mapValueFromRangeToRange(
+            double value,
+            double fromLow,
+            double fromHigh,
+            double toLow,
+            double toHigh) {
+        double fromRangeSize = fromHigh - fromLow;
+        double toRangeSize = toHigh - toLow;
+        double valueScale = (value - fromLow) / fromRangeSize;
+        return toLow + (valueScale * toRangeSize);
     }
 
     private void initView(Context context) {
@@ -160,6 +173,10 @@ public class WaterDropListViewHeader extends FrameLayout {
         mProgressBar.setVisibility(View.GONE);
     }
 
+    public int getVisiableHeight() {
+        return mContainer.getHeight();
+    }
+
     public void setVisiableHeight(int height) {
         if (height < 0)
             height = 0;
@@ -178,33 +195,6 @@ public class WaterDropListViewHeader extends FrameLayout {
 
     }
 
-    /**
-     * Map a value within a given range to another range.
-     *
-     * @param value    the value to map
-     * @param fromLow  the low end of the range the value is within
-     * @param fromHigh the high end of the range the value is within
-     * @param toLow    the low end of the range to map to
-     * @param toHigh   the high end of the range to map to
-     * @return the mapped value
-     */
-    public static double mapValueFromRangeToRange(
-            double value,
-            double fromLow,
-            double fromHigh,
-            double toLow,
-            double toHigh) {
-        double fromRangeSize = fromHigh - fromLow;
-        double toRangeSize = toHigh - toLow;
-        double valueScale = (value - fromLow) / fromRangeSize;
-        return toLow + (valueScale * toRangeSize);
-    }
-
-
-    public int getVisiableHeight() {
-        return mContainer.getHeight();
-    }
-
     public STATE getCurrentState() {
         return mState;
     }
@@ -219,6 +209,14 @@ public class WaterDropListViewHeader extends FrameLayout {
 
     public void setStateChangedListener(IStateChangedListener l) {
         mStateChangedListener = l;
+    }
+
+    public enum STATE {
+        normal,//正常
+        stretch,//准备进行拉伸
+        ready,//拉伸到最大位置
+        refreshing,//刷新
+        end//刷新结束，回滚
     }
 
     public interface IStateChangedListener {

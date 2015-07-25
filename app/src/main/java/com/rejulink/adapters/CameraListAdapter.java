@@ -20,6 +20,7 @@ public class CameraListAdapter extends BaseAdapter {
 
     private ArrayList<Camera> cameras = null;
     private Context context;
+    private ViewHolder holder;
 
     public CameraListAdapter(Context context) {
         this.context = context;
@@ -65,8 +66,6 @@ public class CameraListAdapter extends BaseAdapter {
             holder.text_view_list_item_camera_name.setText(cameras.get(position).getName());
         return convertView;
     }
-
-    private ViewHolder holder;
 
     class ViewHolder {
         ImageView image_view_list_item_camera_photo;

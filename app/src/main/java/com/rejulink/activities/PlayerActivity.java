@@ -19,8 +19,8 @@ public class PlayerActivity extends BaseActivity {
     private ZSurfaceView zsurface_view_player_video;
     private DisplayMetrics displayMetrics;
 
-    public static void launchActivity(Context context) {
-        context.startActivity(new Intent(context, PlayerActivity.class));
+    public static void launchActivity(Context context, Bundle bundle) {
+        context.startActivity(new Intent(context, PlayerActivity.class), bundle);
     }
 
     @Override

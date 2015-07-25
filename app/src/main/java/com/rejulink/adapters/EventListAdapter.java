@@ -20,13 +20,14 @@ public class EventListAdapter extends BaseAdapter {
 
     private ArrayList<Event> events = null;
     private Context context;
-
-    public void setEvents(ArrayList<Event> events) {
-        this.events = events;
-    }
+    private ViewHolder holder;
 
     public EventListAdapter(Context context) {
         this.context = context;
+    }
+
+    public void setEvents(ArrayList<Event> events) {
+        this.events = events;
     }
 
     @Override
@@ -60,8 +61,6 @@ public class EventListAdapter extends BaseAdapter {
         holder.text_view_list_item_event_text.setText(events.get(position).getText());
         return convertView;
     }
-
-    private ViewHolder holder;
 
     class ViewHolder {
         ImageView image_view_list_item_event_image;

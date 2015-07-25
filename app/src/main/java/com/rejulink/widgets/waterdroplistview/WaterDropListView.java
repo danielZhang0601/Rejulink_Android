@@ -14,34 +14,6 @@ import android.widget.Scroller;
  * Created by zxd on 2015/7/16.
  */
 public class WaterDropListView extends ListView implements AbsListView.OnScrollListener, WaterDropListViewHeader.IStateChangedListener {
-    private float mLastY = -1; // save event y
-    private Scroller mScroller; // used for scroll back
-    private OnScrollListener mScrollListener; // user's scroll listener
-
-    // the interface to trigger refresh and load more.
-    private IWaterDropListViewListener mListViewListener;
-
-    // -- header view
-    private WaterDropListViewHeader mHeaderView;
-    // header view content, use it to calculate the Header's height. And hide it
-    // when disable pull refresh.
-//	private RelativeLayout mHeaderViewContent;
-    private boolean mEnablePullRefresh = true;
-//	private boolean mPullRefreshing = false; // is refreashing.
-
-    // -- footer view
-    private WaterDropListViewFooter mFooterView;
-    private boolean mEnablePullLoad;
-    private boolean mPullLoading;
-    private boolean mIsFooterReady = false;
-
-    // total list items, used to detect is at the bottom of listview.
-    private int mTotalItemCount;
-
-    // for mScroller, scroll back from header or footer.
-    private ScrollBack mScrollBack;
-    private boolean isTouchingScreen = false;//手指是否触摸屏幕
-
     //	private int mStretchHeight; // view开始变形的高度
 //	private int mReadyHeight; // view由stretch变成ready的高度
     private final static int SCROLL_DURATION = 400; // scroll back duration
@@ -49,11 +21,28 @@ public class WaterDropListView extends ListView implements AbsListView.OnScrollL
     // at bottom, trigger
     // load more.
     private final static float OFFSET_RADIO = 1.8f; // support iOS like pull
-
-    private enum ScrollBack {
-        header,
-        footer
-    }                                                // feature.
+    private float mLastY = -1; // save event y
+    private Scroller mScroller; // used for scroll back
+    private OnScrollListener mScrollListener; // user's scroll listener
+//	private boolean mPullRefreshing = false; // is refreashing.
+    // the interface to trigger refresh and load more.
+    private IWaterDropListViewListener mListViewListener;
+    // -- header view
+    private WaterDropListViewHeader mHeaderView;
+    // header view content, use it to calculate the Header's height. And hide it
+    // when disable pull refresh.
+//	private RelativeLayout mHeaderViewContent;
+    private boolean mEnablePullRefresh = true;
+    // -- footer view
+    private WaterDropListViewFooter mFooterView;
+    private boolean mEnablePullLoad;
+    private boolean mPullLoading;
+    private boolean mIsFooterReady = false;
+    // total list items, used to detect is at the bottom of listview.
+    private int mTotalItemCount;
+    // for mScroller, scroll back from header or footer.
+    private ScrollBack mScrollBack;
+    private boolean isTouchingScreen = false;//手指是否触摸屏幕
 
     /**
      * @param context
@@ -148,7 +137,6 @@ public class WaterDropListView extends ListView implements AbsListView.OnScrollL
         mFooterView.setEnabled(true);
     }
 
-
     private void invokeOnScrolling() {
         if (mScrollListener instanceof OnXScrollListener) {
             OnXScrollListener l = (OnXScrollListener) mScrollListener;
@@ -224,7 +212,6 @@ public class WaterDropListView extends ListView implements AbsListView.OnScrollL
 
         // setSelection(mTotalItemCount - 1); // scroll to bottom
     }
-
 
     private void resetFooterHeight() {
         int bottomMargin = mFooterView.getBottomMargin();
@@ -336,6 +323,11 @@ public class WaterDropListView extends ListView implements AbsListView.OnScrollL
     public void setWaterDropListViewListener(IWaterDropListViewListener l) {
         mListViewListener = l;
     }
+
+    private enum ScrollBack {
+        header,
+        footer
+    }                                                // feature.
 
     /**
      * you can listen ListView.OnScrollListener or this one. it will invoke onXScrolling when header/footer scroll back.

@@ -5,6 +5,14 @@ public class RequestCMSLoginData {
     private String password;
     private String verify_code;
 
+    public RequestCMSLoginData(String account, String password,
+                               String verify_code) {
+        super();
+        this.account = account;
+        this.password = password;
+        this.verify_code = verify_code;
+    }
+
     public String getAccount() {
         return account;
     }
@@ -26,14 +34,6 @@ public class RequestCMSLoginData {
     }
 
     public void setVerify_code(String verify_code) {
-        this.verify_code = verify_code;
-    }
-
-    public RequestCMSLoginData(String account, String password,
-                               String verify_code) {
-        super();
-        this.account = account;
-        this.password = password;
         this.verify_code = verify_code;
     }
 

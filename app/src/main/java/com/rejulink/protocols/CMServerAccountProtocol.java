@@ -5,7 +5,28 @@ import android.content.Context;
 import com.alibaba.fastjson.JSON;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.rejulink.networks.ZAsyncHttpClient;
-import com.rejulink.protocols.bean.*;
+import com.rejulink.protocols.bean.RequestCMSConfirmModifyCellphone;
+import com.rejulink.protocols.bean.RequestCMSConfirmModifyCellphoneData;
+import com.rejulink.protocols.bean.RequestCMSGetAccountInfo;
+import com.rejulink.protocols.bean.RequestCMSGetAccountInfoData;
+import com.rejulink.protocols.bean.RequestCMSLogin;
+import com.rejulink.protocols.bean.RequestCMSLoginData;
+import com.rejulink.protocols.bean.RequestCMSLogout;
+import com.rejulink.protocols.bean.RequestCMSLogoutData;
+import com.rejulink.protocols.bean.RequestCMSModifyPassword;
+import com.rejulink.protocols.bean.RequestCMSModifyPasswordData;
+import com.rejulink.protocols.bean.RequestCMSRequestModifyCellphone;
+import com.rejulink.protocols.bean.RequestCMSRequestModifyCellphoneData;
+import com.rejulink.protocols.bean.RequestCMSRequestRegisterSms;
+import com.rejulink.protocols.bean.RequestCMSRequestRegisterSmsData;
+import com.rejulink.protocols.bean.RequestCMSRequestResetPasswordByPhone;
+import com.rejulink.protocols.bean.RequestCMSRequestResetPasswordByPhoneData;
+import com.rejulink.protocols.bean.RequestCMSResetPassword;
+import com.rejulink.protocols.bean.RequestCMSResetPasswordData;
+import com.rejulink.protocols.bean.RequestCMSSmsRegister;
+import com.rejulink.protocols.bean.RequestCMSSmsRegisterData;
+import com.rejulink.protocols.bean.RequestCMSUpdateAccountInfo;
+import com.rejulink.protocols.bean.RequestCMSUpdateAccountInfoData;
 
 public class CMServerAccountProtocol {
 

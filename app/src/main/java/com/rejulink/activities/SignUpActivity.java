@@ -39,8 +39,8 @@ public class SignUpActivity extends BaseActivity implements OnClickListener, Com
     private TextView text_view_title_bar_text_back;
     private CheckBox check_box_sign_up_new_password;
 
-    public static void launchActivity(Context context) {
-        context.startActivity(new Intent(context, SignUpActivity.class));
+    public static void launchActivity(Context context, Bundle bundle) {
+        context.startActivity(new Intent(context, SignUpActivity.class), bundle);
     }
 
     @Override

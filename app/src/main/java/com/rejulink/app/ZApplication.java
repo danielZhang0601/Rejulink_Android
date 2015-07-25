@@ -14,16 +14,26 @@ public class ZApplication extends Application {
     private static Context _context;
     private static ZApplication instance;
 
+    public static Context get_context() {
+        return _context;
+    }
+
+    public synchronized static ZApplication getInstance() {
+        if (null == instance) {
+            instance = new ZApplication();
+        }
+        return instance;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
         _context = getApplicationContext();
         AnalyticsConfig.enableEncrypt(true);
         //测试环境不上传统计数据
-        if (GlobalDefine.EnvironmentTest.equals(ManifestUtil.getMetaData(this, GlobalDefine.UmengChannel, GlobalDefine.EnvironmentTest))){
+        if (GlobalDefine.EnvironmentTest.equals(ManifestUtil.getMetaData(this, GlobalDefine.UmengChannel, GlobalDefine.EnvironmentTest))) {
             Environment.setIsTestMode(true);
-        }
-        else{   //非测试环境上传数据
+        } else {   //非测试环境上传数据
             Environment.setIsTestMode(false);
             MobclickAgent.updateOnlineConfig(_context);
         }
@@ -42,16 +52,5 @@ public class ZApplication extends Application {
     @Override
     public void onTrimMemory(int level) {
         super.onTrimMemory(level);
-    }
-
-    public static Context get_context() {
-        return _context;
-    }
-
-    public synchronized static ZApplication getInstance() {
-        if (null == instance) {
-            instance = new ZApplication();
-        }
-        return instance;
     }
 }

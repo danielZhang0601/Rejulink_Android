@@ -27,16 +27,15 @@ import com.rejulink.utils.BitmapUtil;
  * Created by zxd on 2015/7/16.
  */
 public class WaterDropView extends View {
+    private final static int BACK_ANIM_DURATION = 180;
+    private final static float STROKE_WIDTH = 2;//���߿��
     private Circle topCircle;
     private Circle bottomCircle;
-
     private Paint mPaint;
     private Path mPath;
     private float mMaxCircleRadius;//Բ�뾶���ֵ
     private float mMinCircleRaidus;//Բ�뾶��Сֵ
     private Bitmap arrowBitmap;//��ͷ
-    private final static int BACK_ANIM_DURATION = 180;
-    private final static float STROKE_WIDTH = 2;//���߿��
 
     public WaterDropView(Context context) {
         super(context);
@@ -218,11 +217,11 @@ public class WaterDropView extends View {
         return bottomCircle;
     }
 
-    public void setIndicatorColor(int color) {
-        mPaint.setColor(color);
-    }
-
     public int getIndicatorColor() {
         return mPaint.getColor();
+    }
+
+    public void setIndicatorColor(int color) {
+        mPaint.setColor(color);
     }
 }

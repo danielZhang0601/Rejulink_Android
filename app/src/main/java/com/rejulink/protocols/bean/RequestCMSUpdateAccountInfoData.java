@@ -8,6 +8,17 @@ public class RequestCMSUpdateAccountInfoData {
     private String address;
     private String birthday;
 
+    public RequestCMSUpdateAccountInfoData(String account, String auth_code,
+                                           String nick_name, int sex, String address, String birthday) {
+        super();
+        this.account = account;
+        this.auth_code = auth_code;
+        this.nick_name = nick_name;
+        this.sex = sex;
+        this.address = address;
+        this.birthday = birthday;
+    }
+
     public String getAccount() {
         return account;
     }
@@ -53,17 +64,6 @@ public class RequestCMSUpdateAccountInfoData {
     }
 
     public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
-
-    public RequestCMSUpdateAccountInfoData(String account, String auth_code,
-                                           String nick_name, int sex, String address, String birthday) {
-        super();
-        this.account = account;
-        this.auth_code = auth_code;
-        this.nick_name = nick_name;
-        this.sex = sex;
-        this.address = address;
         this.birthday = birthday;
     }
 

@@ -6,6 +6,15 @@ public class RequestCMSConfirmModifyCellphoneData {
     private String password;
     private String new_phone;
 
+    public RequestCMSConfirmModifyCellphoneData(String auth_code,
+                                                String account, String password, String new_phone) {
+        super();
+        this.auth_code = auth_code;
+        this.account = account;
+        this.password = password;
+        this.new_phone = new_phone;
+    }
+
     public String getAuth_code() {
         return auth_code;
     }
@@ -35,15 +44,6 @@ public class RequestCMSConfirmModifyCellphoneData {
     }
 
     public void setNew_phone(String new_phone) {
-        this.new_phone = new_phone;
-    }
-
-    public RequestCMSConfirmModifyCellphoneData(String auth_code,
-                                                String account, String password, String new_phone) {
-        super();
-        this.auth_code = auth_code;
-        this.account = account;
-        this.password = password;
         this.new_phone = new_phone;
     }
 

@@ -12,7 +12,6 @@ public class SharedPreferenceHelper {
     private static final String APP_NAME = "Family";
 
     /**
-     *
      * @param context
      * @param key
      * @param object
@@ -113,7 +112,6 @@ public class SharedPreferenceHelper {
         private static final Method sApplyMethod = findApplyMethod();
 
         /**
-         *
          * @return
          */
         @SuppressWarnings({"unchecked", "rawtypes"})
@@ -128,7 +126,6 @@ public class SharedPreferenceHelper {
         }
 
         /**
-         *
          * @param editor
          */
         public static void apply(SharedPreferences.Editor editor) {

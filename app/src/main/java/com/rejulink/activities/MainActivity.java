@@ -17,12 +17,9 @@ import com.rejulink.fragments.MoreFragment;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
-    public static void launchActivity(Context context) {
-        context.startActivity(new Intent(context, MainActivity.class));
-    }
-
+    int selectedColor, normalColor;
     private TextView text_view_title_bar_text_back;
-    private TextView text_view_title_bar_text_done;
+    private ImageView image_view_title_bar_text_done;
 
     private CameraFragment cameraFragment;
     private EventFragment eventFragment;
@@ -38,7 +35,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private TextView textViewEvent;
     private TextView textViewMore;
 
-    int selectedColor, normalColor;
+    public static void launchActivity(Context context, Bundle bundle) {
+        context.startActivity(new Intent(context, MainActivity.class), bundle);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +50,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         text_view_title_bar_text_back = (TextView) findViewById(R.id.text_view_title_bar_text_back);
         //清除掉TextView的左边返回箭头
         text_view_title_bar_text_back.setCompoundDrawables(null, null, null, null);
-        text_view_title_bar_text_done = (TextView) findViewById(R.id.text_view_title_bar_text_done);
+        image_view_title_bar_text_done = (ImageView) findViewById(R.id.image_view_title_bar_text_done);
+        image_view_title_bar_text_done.setImageDrawable(getResources().getDrawable(R.drawable.title_button_add));
+        image_view_title_bar_text_done.setOnClickListener(this);
 
         linearLayoutCamera = (LinearLayout) findViewById(R.id.tab_linear_layout_1);
         linearLayoutEvent = (LinearLayout) findViewById(R.id.tab_linear_layout_2);
@@ -96,6 +97,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 textViewEvent.setTextColor(normalColor);
                 imageViewMore.setImageResource(R.mipmap.tab_more_normal);
                 textViewMore.setTextColor(normalColor);
+                image_view_title_bar_text_done.setVisibility(View.VISIBLE);
                 fragmentTransaction.show(cameraFragment).hide(eventFragment).hide(moreFragment).commit();
                 break;
             case R.id.tab_linear_layout_2:
@@ -106,6 +108,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 textViewEvent.setTextColor(selectedColor);
                 imageViewMore.setImageResource(R.mipmap.tab_more_normal);
                 textViewMore.setTextColor(normalColor);
+                image_view_title_bar_text_done.setVisibility(View.GONE);
                 fragmentTransaction.hide(cameraFragment).show(eventFragment).hide(moreFragment).commit();
                 break;
             case R.id.tab_linear_layout_3:
@@ -116,7 +119,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 textViewEvent.setTextColor(normalColor);
                 imageViewMore.setImageResource(R.mipmap.tab_more_select);
                 textViewMore.setTextColor(selectedColor);
+                image_view_title_bar_text_done.setVisibility(View.GONE);
                 fragmentTransaction.hide(cameraFragment).hide(eventFragment).show(moreFragment).commit();
+                break;
+            case R.id.image_view_title_bar_text_done:
+                nextActivity = ActivityEnum.ZXING_CAPTURE_ACTIVITY;
+                next();
                 break;
         }
     }

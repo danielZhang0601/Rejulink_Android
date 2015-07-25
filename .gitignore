@@ -28,5 +28,4 @@ proguard/
 *.log
 
 # IDEA
-*.iml
 .idea/

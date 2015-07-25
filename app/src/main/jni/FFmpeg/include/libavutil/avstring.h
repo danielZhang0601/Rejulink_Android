@@ -137,11 +137,9 @@ size_t av_strlcatf(char *dst, size_t size, const char *fmt, ...) av_printf_forma
  * @param len maximum number of characters to check in the string, that
  *            is the maximum value which is returned by the function
  */
-static inline size_t av_strnlen(const char *s, size_t len)
-{
+static inline size_t av_strnlen(const char *s, size_t len) {
     size_t i;
-    for (i = 0; i < len && s[i]; i++)
-        ;
+    for (i = 0; i < len && s[i]; i++);
     return i;
 }
 
@@ -218,8 +216,7 @@ av_const int av_isspace(int c);
 /**
  * Locale-independent conversion of ASCII characters to uppercase.
  */
-static inline av_const int av_toupper(int c)
-{
+static inline av_const int av_toupper(int c) {
     if (c >= 'a' && c <= 'z')
         c ^= 0x20;
     return c;
@@ -228,8 +225,7 @@ static inline av_const int av_toupper(int c)
 /**
  * Locale-independent conversion of ASCII characters to lowercase.
  */
-static inline av_const int av_tolower(int c)
-{
+static inline av_const int av_tolower(int c) {
     if (c >= 'A' && c <= 'Z')
         c ^= 0x20;
     return c;

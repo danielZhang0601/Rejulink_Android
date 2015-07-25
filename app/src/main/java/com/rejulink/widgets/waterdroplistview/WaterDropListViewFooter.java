@@ -22,12 +22,6 @@ public class WaterDropListViewFooter extends LinearLayout {
     private TextView txt_progresstext;
     private LinearLayout layout_progress;
 
-    public enum STATE {
-        normal,
-        ready,
-        loading
-    }
-
     public WaterDropListViewFooter(Context context) {
         super(context);
         initView(context);
@@ -37,7 +31,6 @@ public class WaterDropListViewFooter extends LinearLayout {
         super(context, attrs);
         initView(context);
     }
-
 
     public void setState(STATE state) {
         mHintView.setVisibility(View.INVISIBLE);
@@ -58,16 +51,16 @@ public class WaterDropListViewFooter extends LinearLayout {
         }
     }
 
+    public int getBottomMargin() {
+        LayoutParams lp = (LayoutParams) mContentView.getLayoutParams();
+        return lp.bottomMargin;
+    }
+
     public void setBottomMargin(int height) {
         if (height < 0) return;
         LayoutParams lp = (LayoutParams) mContentView.getLayoutParams();
         lp.bottomMargin = height;
         mContentView.setLayoutParams(lp);
-    }
-
-    public int getBottomMargin() {
-        LayoutParams lp = (LayoutParams) mContentView.getLayoutParams();
-        return lp.bottomMargin;
     }
 
     /**
@@ -79,7 +72,6 @@ public class WaterDropListViewFooter extends LinearLayout {
         layout_progress.setVisibility(View.GONE);
         txt_progresstext.setVisibility(View.GONE);
     }
-
 
     /**
      * loading status
@@ -120,5 +112,11 @@ public class WaterDropListViewFooter extends LinearLayout {
         mHintView = (TextView) moreView.findViewById(R.id.waterdroplistview_footer_hint_textview);
         layout_progress = (LinearLayout) moreView.findViewById(R.id.waterdroplistview_progresslayout);
         txt_progresstext = (TextView) moreView.findViewById(R.id.waterdroplistview_progresstext);
+    }
+
+    public enum STATE {
+        normal,
+        ready,
+        loading
     }
 }

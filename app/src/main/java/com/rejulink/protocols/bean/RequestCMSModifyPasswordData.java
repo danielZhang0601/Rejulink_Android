@@ -7,6 +7,16 @@ public class RequestCMSModifyPasswordData {
     private String new_password;
     private String verify_code;
 
+    public RequestCMSModifyPasswordData(String auth_code, String account,
+                                        String old_password, String new_password, String verify_code) {
+        super();
+        this.auth_code = auth_code;
+        this.account = account;
+        this.old_password = old_password;
+        this.new_password = new_password;
+        this.verify_code = verify_code;
+    }
+
     public String getAuth_code() {
         return auth_code;
     }
@@ -44,16 +54,6 @@ public class RequestCMSModifyPasswordData {
     }
 
     public void setVerify_code(String verify_code) {
-        this.verify_code = verify_code;
-    }
-
-    public RequestCMSModifyPasswordData(String auth_code, String account,
-                                        String old_password, String new_password, String verify_code) {
-        super();
-        this.auth_code = auth_code;
-        this.account = account;
-        this.old_password = old_password;
-        this.new_password = new_password;
         this.verify_code = verify_code;
     }
 

@@ -198,10 +198,14 @@ int av_samples_get_buffer_size(int *linesize, int nb_channels, int nb_samples,
  * @todo return minimum size in bytes required for the buffer in case
  * of success at the next bump
  */
-int av_samples_fill_arrays(uint8_t **audio_data, int *linesize,
-                           const uint8_t *buf,
-                           int nb_channels, int nb_samples,
-                           enum AVSampleFormat sample_fmt, int align);
+int av_samples_fill_arrays(uint8_t * *audio_data, int * linesize,
+        const
+uint8_t *buf,
+int nb_channels,
+int nb_samples,
+enum AVSampleFormat sample_fmt,
+int align
+);
 
 /**
  * Allocate a samples buffer for nb_samples samples, and fill data pointers and
@@ -222,8 +226,12 @@ int av_samples_fill_arrays(uint8_t **audio_data, int *linesize,
  * @see av_samples_fill_arrays()
  * @see av_samples_alloc_array_and_samples()
  */
-int av_samples_alloc(uint8_t **audio_data, int *linesize, int nb_channels,
-                     int nb_samples, enum AVSampleFormat sample_fmt, int align);
+int av_samples_alloc(uint8_t * *audio_data, int * linesize, int
+nb_channels,
+int nb_samples,
+enum AVSampleFormat sample_fmt,
+int align
+);
 
 /**
  * Allocate a data pointers array, samples buffer for nb_samples
@@ -234,8 +242,12 @@ int av_samples_alloc(uint8_t **audio_data, int *linesize, int nb_channels,
  *
  * @see av_samples_alloc()
  */
-int av_samples_alloc_array_and_samples(uint8_t ***audio_data, int *linesize, int nb_channels,
-                                       int nb_samples, enum AVSampleFormat sample_fmt, int align);
+int av_samples_alloc_array_and_samples(uint8_t * **audio_data, int * linesize, int
+nb_channels,
+int nb_samples,
+enum AVSampleFormat sample_fmt,
+int align
+);
 
 /**
  * Copy samples from src to dst.
@@ -248,9 +260,14 @@ int av_samples_alloc_array_and_samples(uint8_t ***audio_data, int *linesize, int
  * @param nb_channels number of audio channels
  * @param sample_fmt audio sample format
  */
-int av_samples_copy(uint8_t **dst, uint8_t * const *src, int dst_offset,
-                    int src_offset, int nb_samples, int nb_channels,
-                    enum AVSampleFormat sample_fmt);
+int av_samples_copy(uint8_t * *dst, uint8_t * const
+*src,
+int dst_offset,
+int src_offset,
+int nb_samples,
+int nb_channels,
+enum AVSampleFormat sample_fmt
+);
 
 /**
  * Fill an audio buffer with silence.
@@ -261,8 +278,12 @@ int av_samples_copy(uint8_t **dst, uint8_t * const *src, int dst_offset,
  * @param nb_channels number of audio channels
  * @param sample_fmt  audio sample format
  */
-int av_samples_set_silence(uint8_t **audio_data, int offset, int nb_samples,
-                           int nb_channels, enum AVSampleFormat sample_fmt);
+int av_samples_set_silence(uint8_t * *audio_data, int
+offset,
+int nb_samples,
+int nb_channels,
+enum AVSampleFormat sample_fmt
+);
 
 /**
  * @}

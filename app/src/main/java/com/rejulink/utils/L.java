@@ -10,13 +10,12 @@ import android.util.Log;
  * Logͳһ������
  */
 public class L {
+    private static final String TAG = "ZXD";
+    public static boolean isDebug = true;
     private L() {
         /* cannot be instantiated */
         throw new UnsupportedOperationException("cannot be instantiated");
     }
-
-    public static boolean isDebug = true;
-    private static final String TAG = "ZXD";
 
     public static void i(String msg) {
         if (isDebug)

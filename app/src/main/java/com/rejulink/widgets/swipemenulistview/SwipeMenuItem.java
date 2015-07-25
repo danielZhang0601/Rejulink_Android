@@ -31,6 +31,10 @@ public class SwipeMenuItem {
         return titleColor;
     }
 
+    public void setTitleColor(int titleColor) {
+        this.titleColor = titleColor;
+    }
+
     public int getTitleSize() {
         return titleSize;
     }
@@ -39,44 +43,40 @@ public class SwipeMenuItem {
         this.titleSize = titleSize;
     }
 
-    public void setTitleColor(int titleColor) {
-        this.titleColor = titleColor;
-    }
-
     public String getTitle() {
         return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public void setTitle(int resId) {
         setTitle(mContext.getString(resId));
     }
 
-    public Drawable getIcon() {
-        return icon;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setIcon(Drawable icon) {
-        this.icon = icon;
+    public Drawable getIcon() {
+        return icon;
     }
 
     public void setIcon(int resId) {
         this.icon = mContext.getResources().getDrawable(resId);
     }
 
+    public void setIcon(Drawable icon) {
+        this.icon = icon;
+    }
+
     public Drawable getBackground() {
         return background;
     }
 
-    public void setBackground(Drawable background) {
-        this.background = background;
-    }
-
     public void setBackground(int resId) {
         this.background = mContext.getResources().getDrawable(resId);
+    }
+
+    public void setBackground(Drawable background) {
+        this.background = background;
     }
 
     public int getWidth() {

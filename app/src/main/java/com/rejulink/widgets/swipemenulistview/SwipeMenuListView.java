@@ -76,20 +76,20 @@ public class SwipeMenuListView extends ListView {
         });
     }
 
-    public void setCloseInterpolator(Interpolator interpolator) {
-        mCloseInterpolator = interpolator;
+    public Interpolator getOpenInterpolator() {
+        return mOpenInterpolator;
     }
 
     public void setOpenInterpolator(Interpolator interpolator) {
         mOpenInterpolator = interpolator;
     }
 
-    public Interpolator getOpenInterpolator() {
-        return mOpenInterpolator;
-    }
-
     public Interpolator getCloseInterpolator() {
         return mCloseInterpolator;
+    }
+
+    public void setCloseInterpolator(Interpolator interpolator) {
+        mCloseInterpolator = interpolator;
     }
 
     @Override

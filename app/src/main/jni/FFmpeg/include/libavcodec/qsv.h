@@ -28,7 +28,7 @@ typedef struct AVQSVContext {
     int iopattern;
 
     mfxExtBuffer **ext_buffers;
-    int         nb_ext_buffers;
+    int nb_ext_buffers;
 } AVQSVContext;
 
 /**

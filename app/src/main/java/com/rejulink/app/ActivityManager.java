@@ -13,12 +13,11 @@ import java.util.Stack;
  * @date 2015年06月22日
  */
 public class ActivityManager {
+    private static volatile ActivityManager instance;
     /**
      * 保存所有Activity
      */
     private volatile Stack<Activity> activityStack = new Stack<Activity>();
-
-    private static volatile ActivityManager instance;
 
     private ActivityManager() {
     }

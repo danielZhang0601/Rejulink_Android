@@ -13,17 +13,17 @@
             android:id="@+id/waterdroplistview_progresslayout"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:visibility="invisible"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="invisible">
 
             <ProgressBar
                 android:id="@+id/waterdroplistview_footer_progressbar"
                 android:layout_width="27dip"
                 android:layout_height="27dip"
                 android:layout_centerInParent="true"
-                android:visibility="invisible"
-                android:indeterminate="false" />
+                android:indeterminate="false"
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/waterdroplistview_progresstext"

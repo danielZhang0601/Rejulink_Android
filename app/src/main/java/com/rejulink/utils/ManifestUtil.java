@@ -8,11 +8,11 @@ import android.content.pm.PackageManager;
  */
 public class ManifestUtil {
 
-    public static String getMetaData(Context context, String key, String defaultValue){
+    public static String getMetaData(Context context, String key, String defaultValue) {
         String value = defaultValue;
-        try{
+        try {
             value = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA).metaData.getString(key);
-        }catch (PackageManager.NameNotFoundException e){
+        } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
         return value;

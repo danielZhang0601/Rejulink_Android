@@ -39,8 +39,8 @@ public class RetrievePasswordActivity extends BaseActivity implements OnClickLis
     private Button button_retrieve_password_done;
     private CheckBox check_box_layout_retrieve_password_new_password;
 
-    public static void launchActivity(Context context) {
-        context.startActivity(new Intent(context, RetrievePasswordActivity.class));
+    public static void launchActivity(Context context, Bundle bundle) {
+        context.startActivity(new Intent(context, RetrievePasswordActivity.class), bundle);
     }
 
     @Override
@@ -145,7 +145,7 @@ public class RetrievePasswordActivity extends BaseActivity implements OnClickLis
     }
 
     //虽然没有太大必要
-    private void clearOldPassword(){
+    private void clearOldPassword() {
         SharedPreferenceHelper.remove(this, GlobalDefine.SavedPassword);
     }
 }

@@ -12,8 +12,8 @@ import com.rejulink.R;
  */
 public class PersonInfoActivity extends BaseActivity {
 
-    public static void launchActivity(Context context){
-        context.startActivity(new Intent(context,PersonInfoActivity.class));
+    public static void launchActivity(Context context, Bundle bundle) {
+        context.startActivity(new Intent(context, PersonInfoActivity.class), bundle);
     }
 
     @Override

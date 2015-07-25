@@ -23,7 +23,7 @@ public class ZSurfaceView extends GLSurfaceView {
     private Context context;
 
     public ZSurfaceView(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public ZSurfaceView(Context context, AttributeSet attrs) {
@@ -32,12 +32,19 @@ public class ZSurfaceView extends GLSurfaceView {
         init();
     }
 
-    private void init(){
+    private static void checkEglError(String prompt, EGL10 egl) {
+        int error;
+        while ((error = egl.eglGetError()) != EGL10.EGL_SUCCESS) {
+            L.e(String.format("%s: EGL error: 0x%x", prompt, error));
+        }
+    }
+
+    private void init() {
         /* Setup the context factory for 2.0 rendering.
          * See ContextFactory class definition below
          */
         setEGLContextFactory(new ContextFactory());
-        setEGLConfigChooser(new ConfigChooser(5,6,5,0,0,0));
+        setEGLConfigChooser(new ConfigChooser(5, 6, 5, 0, 0, 0));
         setRenderer(new Renderer());
     }
 
@@ -53,19 +60,13 @@ public class ZSurfaceView extends GLSurfaceView {
         setLayoutParams(new FrameLayout.LayoutParams(newWidth, newHeight));
     }
 
-    private static void checkEglError(String prompt, EGL10 egl) {
-        int error;
-        while ((error = egl.eglGetError()) != EGL10.EGL_SUCCESS) {
-            L.e(String.format("%s: EGL error: 0x%x", prompt, error));
-        }
-    }
-
     private static class ContextFactory implements GLSurfaceView.EGLContextFactory {
         private static int EGL_CONTEXT_CLIENT_VERSION = 0x3098;
+
         public EGLContext createContext(EGL10 egl, EGLDisplay display, EGLConfig eglConfig) {
             L.d("creating OpenGL ES 2.0 context");
             checkEglError("Before eglCreateContext", egl);
-            int[] attrib_list = {EGL_CONTEXT_CLIENT_VERSION, 2, EGL10.EGL_NONE };
+            int[] attrib_list = {EGL_CONTEXT_CLIENT_VERSION, 2, EGL10.EGL_NONE};
             EGLContext context = egl.eglCreateContext(display, eglConfig, EGL10.EGL_NO_CONTEXT, attrib_list);
             checkEglError("After eglCreateContext", egl);
             return context;
@@ -77,15 +78,6 @@ public class ZSurfaceView extends GLSurfaceView {
     }
 
     private static class ConfigChooser implements GLSurfaceView.EGLConfigChooser {
-
-        public ConfigChooser(int r, int g, int b, int a, int depth, int stencil) {
-            mRedSize = r;
-            mGreenSize = g;
-            mBlueSize = b;
-            mAlphaSize = a;
-            mDepthSize = depth;
-            mStencilSize = stencil;
-        }
 
         /* This EGL config specification is used to specify 2.0 rendering.
          * We use a minimum size of 4 bits for red/green/blue, but will
@@ -100,6 +92,22 @@ public class ZSurfaceView extends GLSurfaceView {
                         EGL10.EGL_RENDERABLE_TYPE, EGL_OPENGL_ES2_BIT,
                         EGL10.EGL_NONE
                 };
+        // Subclasses can adjust these values:
+        protected int mRedSize;
+        protected int mGreenSize;
+        protected int mBlueSize;
+        protected int mAlphaSize;
+        protected int mDepthSize;
+        protected int mStencilSize;
+        private int[] mValue = new int[1];
+        public ConfigChooser(int r, int g, int b, int a, int depth, int stencil) {
+            mRedSize = r;
+            mGreenSize = g;
+            mBlueSize = b;
+            mAlphaSize = a;
+            mDepthSize = depth;
+            mStencilSize = stencil;
+        }
 
         public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display) {
 
@@ -127,7 +135,7 @@ public class ZSurfaceView extends GLSurfaceView {
 
         public EGLConfig chooseConfig(EGL10 egl, EGLDisplay display,
                                       EGLConfig[] configs) {
-            for(EGLConfig config : configs) {
+            for (EGLConfig config : configs) {
                 int d = findConfigAttrib(egl, display, config,
                         EGL10.EGL_DEPTH_SIZE, 0);
                 int s = findConfigAttrib(egl, display, config,
@@ -248,23 +256,14 @@ public class ZSurfaceView extends GLSurfaceView {
             for (int i = 0; i < attributes.length; i++) {
                 int attribute = attributes[i];
                 String name = names[i];
-                if ( egl.eglGetConfigAttrib(display, config, attribute, value)) {
+                if (egl.eglGetConfigAttrib(display, config, attribute, value)) {
                     L.d(String.format("  %s: %d\n", name, value[0]));
                 } else {
                     // Log.w(TAG, String.format("  %s: failed\n", name));
-                    while (egl.eglGetError() != EGL10.EGL_SUCCESS);
+                    while (egl.eglGetError() != EGL10.EGL_SUCCESS) ;
                 }
             }
         }
-
-        // Subclasses can adjust these values:
-        protected int mRedSize;
-        protected int mGreenSize;
-        protected int mBlueSize;
-        protected int mAlphaSize;
-        protected int mDepthSize;
-        protected int mStencilSize;
-        private int[] mValue = new int[1];
     }
 
     private static class Renderer implements GLSurfaceView.Renderer {
@@ -273,7 +272,7 @@ public class ZSurfaceView extends GLSurfaceView {
         }
 
         public void onSurfaceChanged(GL10 gl, int width, int height) {
-            NativePlayer.onNativeSurfaceChanged(width,height);
+            NativePlayer.onNativeSurfaceChanged(width, height);
         }
 
         public void onSurfaceCreated(GL10 gl, EGLConfig config) {
