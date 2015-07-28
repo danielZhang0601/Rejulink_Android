@@ -8,6 +8,7 @@ import com.rejulink.utils.GlobalDefine;
 import com.rejulink.utils.ManifestUtil;
 import com.umeng.analytics.AnalyticsConfig;
 import com.umeng.analytics.MobclickAgent;
+import com.umeng.update.UmengUpdateAgent;
 
 public class ZApplication extends Application {
 
@@ -37,6 +38,8 @@ public class ZApplication extends Application {
             Environment.setIsTestMode(false);
             MobclickAgent.updateOnlineConfig(_context);
         }
+        //检查是否有更新
+        UmengUpdateAgent.update(_context);
     }
 
     @Override

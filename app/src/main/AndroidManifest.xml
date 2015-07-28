@@ -75,11 +75,7 @@
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/title_activity_main"
-            android:screenOrientation="portrait">
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </activity>
+            android:screenOrientation="portrait" />
         <!--播放界面-->
         <activity
             android:name=".activities.PlayerActivity"
